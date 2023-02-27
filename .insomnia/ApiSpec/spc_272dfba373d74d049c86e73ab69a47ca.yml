@@ -1,7 +1,7 @@
 _id: spc_272dfba373d74d049c86e73ab69a47ca
 type: ApiSpec
 parentId: wrk_e38b709750814de5a8b73515800efa08
-modified: 1677447580157
+modified: 1677456837580
 created: 1676216621763
 fileName: ediaristas.yaml
 contents: >-
@@ -35,8 +35,6 @@ contents: >-
     - name: Diaristas
     - name: Enderecos
     - name: Oportunidades
-
-    
 
   paths:
 
@@ -605,6 +603,59 @@ contents: >-
               'application/json':
                 schema:
                   $ref: '#/components/schemas/MessageResponse'
+          '400':
+            description: Houveram erros de validação
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '401':
+            description: Usuário não está autenticado
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '403':
+            description: Usuário autenticado não tem acesso para realizar está operação
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '404':
+            description: Diária não encontrada
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+        security:
+          - JWT: []
+    /api/diarias/{diariaId}/confirmar-presenca:
+      post:
+        operationId: confirmarPresenca
+        tags:
+          - Diárias
+        description: Confirmar a presença do diárista para a diária
+        parameters:
+          - name: diariaId
+            in: path
+            description: ID da diária para confirmar a presença
+            required: true
+            schema:
+              type: integer
+            example: 1
+        responses:
+          '200':
+            description: Confirmação de presença do diárista realizada com sucesso
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/MessageResponse'
+          '400':
+            description: Houveram erros de validação
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
           '401':
             description: Usuário não está autenticado
             content:
