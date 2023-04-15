@@ -1,0 +1,22 @@
+_id: req_wrk_e38b709750814de5a8b73515800efa08980aa318
+type: Request
+parentId: fld_wrk_e38b709750814de5a8b73515800efa085891b7e0
+modified: 1681582514351
+created: 1681582514351
+url: "{{ base_url }}/api/usuarios"
+name: /api/usuarios
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1681582514351
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

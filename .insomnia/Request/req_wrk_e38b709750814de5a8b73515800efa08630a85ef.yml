@@ -1,0 +1,24 @@
+_id: req_wrk_e38b709750814de5a8b73515800efa08630a85ef
+type: Request
+parentId: fld_wrk_e38b709750814de5a8b73515800efa088789ea80
+modified: 1681582514354
+created: 1681582514354
+url: "{{ base_url }}/api/diaristas/localidades"
+name: /api/diaristas/localidades
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: cep
+    disabled: false
+    value: string
+headers: []
+authentication: {}
+metaSortKey: -1681582514354
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,24 @@
+_id: req_wrk_e38b709750814de5a8b73515800efa08b544381c
+type: Request
+parentId: fld_wrk_e38b709750814de5a8b73515800efa08cf965073
+modified: 1681582514316
+created: 1681582514316
+url: "{{ base_url }}/api/diarias/{{ diariaId }}/candidatar"
+name: /api/diarias/{diariaId}/candidatar
+description: ""
+method: POST
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{bearerToken}}"
+  prefix: ""
+metaSortKey: -1681582514316
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,28 @@
+_id: req_wrk_e38b709750814de5a8b73515800efa0826b56c1b
+type: Request
+parentId: fld_wrk_e38b709750814de5a8b73515800efa0835d0f5fb
+modified: 1681582514334
+created: 1681582514334
+url: "{{ base_url }}/auth/refresh"
+name: /auth/refresh
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "refresh": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1681582514334
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

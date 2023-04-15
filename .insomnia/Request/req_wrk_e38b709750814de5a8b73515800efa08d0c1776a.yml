@@ -1,0 +1,25 @@
+_id: req_wrk_e38b709750814de5a8b73515800efa08d0c1776a
+type: Request
+parentId: fld_wrk_e38b709750814de5a8b73515800efa085891b7e0
+modified: 1681582514348
+created: 1681582514348
+url: "{{ base_url }}/api/usuarios/endereco"
+name: /api/usuarios/endereco
+description: ""
+method: PUT
+body:
+  mimeType: multipart/form-data
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{bearerToken}}"
+  prefix: ""
+metaSortKey: -1681582514348
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

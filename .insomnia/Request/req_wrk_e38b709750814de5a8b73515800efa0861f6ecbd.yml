@@ -1,0 +1,24 @@
+_id: req_wrk_e38b709750814de5a8b73515800efa0861f6ecbd
+type: Request
+parentId: fld_wrk_e38b709750814de5a8b73515800efa0847c9ef5d
+modified: 1681582514303
+created: 1681582514303
+url: "{{ base_url }}/api/oportunidades"
+name: /api/oportunidades
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{bearerToken}}"
+  prefix: ""
+metaSortKey: -1681582514303
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,24 @@
+_id: req_wrk_e38b709750814de5a8b73515800efa0808260e3e
+type: Request
+parentId: fld_wrk_e38b709750814de5a8b73515800efa08cf965073
+modified: 1681582514320
+created: 1681582514320
+url: "{{ base_url }}/api/diarias/{{ diariaId }}"
+name: /api/diarias/{diariaId}
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{bearerToken}}"
+  prefix: ""
+metaSortKey: -1681582514320
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

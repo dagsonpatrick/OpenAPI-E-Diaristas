@@ -1,0 +1,24 @@
+_id: req_wrk_e38b709750814de5a8b73515800efa0861b495b0
+type: Request
+parentId: fld_wrk_e38b709750814de5a8b73515800efa082eb6ea82
+modified: 1681582514352
+created: 1681582514352
+url: "{{ base_url }}/api/enderecos"
+name: /api/enderecos
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: cep
+    disabled: false
+    value: string
+headers: []
+authentication: {}
+metaSortKey: -1681582514352
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

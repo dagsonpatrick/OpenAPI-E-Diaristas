@@ -1,0 +1,31 @@
+_id: req_wrk_e38b709750814de5a8b73515800efa08cd60f18e
+type: Request
+parentId: fld_wrk_e38b709750814de5a8b73515800efa08cf965073
+modified: 1681582514318
+created: 1681582514318
+url: "{{ base_url }}/api/diarias/{{ diariaId }}/pagar"
+name: /api/diarias/{diariaId}/pagar
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "card_hash": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  type: bearer
+  token: "{{bearerToken}}"
+  prefix: ""
+metaSortKey: -1681582514318
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

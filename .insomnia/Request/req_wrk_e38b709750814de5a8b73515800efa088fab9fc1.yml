@@ -1,0 +1,24 @@
+_id: req_wrk_e38b709750814de5a8b73515800efa088fab9fc1
+type: Request
+parentId: fld_wrk_e38b709750814de5a8b73515800efa08cf965073
+modified: 1681582514315
+created: 1681582514315
+url: "{{ base_url }}/api/diarias/{{ diariaId }}/confirmar-presenca"
+name: /api/diarias/{diariaId}/confirmar-presenca
+description: ""
+method: POST
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{bearerToken}}"
+  prefix: ""
+metaSortKey: -1681582514315
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

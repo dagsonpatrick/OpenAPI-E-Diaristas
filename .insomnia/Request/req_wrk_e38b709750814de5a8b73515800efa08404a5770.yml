@@ -1,0 +1,48 @@
+_id: req_wrk_e38b709750814de5a8b73515800efa08404a5770
+type: Request
+parentId: fld_wrk_e38b709750814de5a8b73515800efa08cf965073
+modified: 1681582514322
+created: 1681582514322
+url: "{{ base_url }}/api/diarias"
+name: /api/diarias
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "data_atendimento": "2023-04-15T18:15:14.298Z",
+      "tempo_atendimento": 0,
+      "preco": 0,
+      "cep": "string",
+      "logradouro": "string",
+      "complemento": "string",
+      "bairro": "string",
+      "cidade": "string",
+      "estado": "string",
+      "codigo_ibge": "string",
+      "quantidade_quartos": 0,
+      "quantidade_salas": 0,
+      "quantidade_banheiros": 0,
+      "quantidade_cozinhas": 0,
+      "quantidade_quintais": 0,
+      "quantidade_outros": 0,
+      "observacoes": "string",
+      "servico": 0
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  type: bearer
+  token: "{{bearerToken}}"
+  prefix: ""
+metaSortKey: -1681582514322
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

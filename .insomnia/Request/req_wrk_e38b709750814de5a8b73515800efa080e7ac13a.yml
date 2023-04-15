@@ -1,0 +1,31 @@
+_id: req_wrk_e38b709750814de5a8b73515800efa080e7ac13a
+type: Request
+parentId: fld_wrk_e38b709750814de5a8b73515800efa08cf965073
+modified: 1681582514308
+created: 1681582514308
+url: "{{ base_url }}/api/diarias/{{ diariaId }}/cancelar"
+name: /api/diarias/{diariaId}/cancelar
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "motivo_cancelamento": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  type: bearer
+  token: "{{bearerToken}}"
+  prefix: ""
+metaSortKey: -1681582514308
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

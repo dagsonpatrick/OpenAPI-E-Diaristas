@@ -1,0 +1,21 @@
+_id: req_wrk_e38b709750814de5a8b73515800efa08d26de793
+type: Request
+parentId: fld_wrk_e38b709750814de5a8b73515800efa085891b7e0
+modified: 1681582514350
+created: 1681582514350
+url: "{{ base_url }}/api/usuarios/endereco"
+name: /api/usuarios/endereco
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1681582514350
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

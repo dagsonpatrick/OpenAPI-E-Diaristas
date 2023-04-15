@@ -1,0 +1,21 @@
+_id: req_wrk_e38b709750814de5a8b73515800efa08be3fcf8e
+type: Request
+parentId: fld_wrk_e38b709750814de5a8b73515800efa08dbda5495
+modified: 1681582514357
+created: 1681582514357
+url: "{{ base_url }}/api"
+name: /api
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1681582514357
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

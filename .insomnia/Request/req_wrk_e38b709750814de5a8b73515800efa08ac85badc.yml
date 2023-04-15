@@ -1,0 +1,32 @@
+_id: req_wrk_e38b709750814de5a8b73515800efa08ac85badc
+type: Request
+parentId: fld_wrk_e38b709750814de5a8b73515800efa08cf965073
+modified: 1681582514312
+created: 1681582514312
+url: "{{ base_url }}/api/diarias/{{ diariaId }}/avalizacao"
+name: /api/diarias/{diariaId}/avalizacao
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "descricao": "string",
+      "nota": 0
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  type: bearer
+  token: "{{bearerToken}}"
+  prefix: ""
+metaSortKey: -1681582514312
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
