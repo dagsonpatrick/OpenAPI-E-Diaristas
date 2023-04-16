@@ -1,7 +1,7 @@
 _id: spc_272dfba373d74d049c86e73ab69a47ca
 type: ApiSpec
 parentId: wrk_e38b709750814de5a8b73515800efa08
-modified: 1681582514379
+modified: 1681667879138
 created: 1676216621763
 fileName: ediaristas.yaml
 contents: >-
@@ -35,6 +35,7 @@ contents: >-
     - name: Diaristas
     - name: Enderecos
     - name: Oportunidades
+    - name: Pagamentos
 
   paths:
 
@@ -177,6 +178,81 @@ contents: >-
               'application/json':
                 schema:
                   $ref: '#/components/schemas/ErrorResponse'
+      put:
+        operationId: putUsuario
+        tags:
+          - Usuários
+        description: Atualiza os dados cadastrais do usuário logado
+        requestBody:
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/UpdateUsuarioRequest'
+        responses:
+          '200':
+            description: Atualização do dados cadastrais do usuário atualizado com sucesso
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/MessageResponse'
+          '400':
+            description: Houveram erros de validação
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '401':
+            description: Usuário não está autenticado
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '403':
+            description: Usuário autenticado não tem acesso para realizar está operação
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+        security:
+          - JWT: []
+    /api/usuarios/foto:
+      post:
+        operationId: atualizarFoto
+        tags:
+          - Usuários
+        description: Atualiza a foto de perfil do usuário logado
+        requestBody:
+          content:
+            'multipart/form-data':
+              schema:
+                $ref: '#/components/schemas/FotoRequest'
+        responses:
+          '200':
+            description: Foto de perfil atualizada com sucesso
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/MessageResponse'
+          '400':
+            description: Houveram erros de validação
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '401':
+            description: Usuário não está autenticado
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '403':
+            description: Usuário autenticado não tem acesso para realizar está operação
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+        security:
+          - JWT: []
     /api/usuarios/endereco:
       get:
         operationId: getUsuarioEndereco
@@ -812,8 +888,37 @@ contents: >-
                   $ref: '#/components/schemas/ErrorResponse'
         security:
           - JWT: []
+    /api/pagamentos:
+      get:
+        operationId: getPagamentos
+        tags:
+          - Pagamentos
+        description: Lista os pagamentos realizados para o usuário logado
+       
+        responses:
+          '200':
+            description: Listagem de pagamentos realizados com sucesso
+            content:
+              'application/json':
+                schema:
+                  type: array
+                  items: 
+                    $ref: '#/components/schemas/PagamentoResponse'   
+          '401':
+            description: Usuário não está autenticado
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '403':
+            description: Usuário autenticado não tem acesso para realizar está operação
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+        security:
+          - JWT: []      
 
-          
   components:
     
     schemas:
@@ -1048,6 +1153,50 @@ contents: >-
             type: string
           codigo_ibge:
             type: string
+      
+      UpdateUsuarioRequest:
+        type: object
+        required:
+          - nome_completo
+          - email     
+          - cpf
+          - nascimento
+          - telefone    
+        properties:
+          nome_completo:
+            type: string
+            minLength: 3
+            maxLength: 255
+          email:
+            type: string
+            format: email
+            maxLength: 255
+          cpf:
+            type: string
+            minLength: 11
+            maxLength: 11
+          nascimento:
+            type: string
+            format: date
+          telefone:
+            type: string
+            minLength: 11
+            maxLength: 11
+          chave_pix:
+            type: string
+            minLength: 11
+            maxLength: 255
+          password:
+            type: string
+            format: password
+          new_password:
+            type: string
+            format: password
+          password_confirmation:
+            type: string
+            format: password
+      
+      
       OportunidadeResponse:
         type: object
         properties:
@@ -1380,7 +1529,34 @@ contents: >-
         properties:
           mensagem:
             type: string
-       
+      PagamentoResponse:
+        type: object
+        properties:
+          id:
+            type: integer
+          status:
+            type: integer
+            enum:
+              - 1
+              - 2
+          valor:
+            type: number
+            format: double
+          valor_deposito:
+            type: number
+            format: double
+          created_at:
+            type: string
+            format: date-time
+      FotoRequest:
+        type: object
+        required:
+          - foto_usuario
+        properties:
+          foto_usuario:
+            type: string
+            format: binary
+                
     securitySchemes:
       JWT:
         type: http
