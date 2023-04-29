@@ -1,7 +1,7 @@
 _id: spc_272dfba373d74d049c86e73ab69a47ca
 type: ApiSpec
 parentId: wrk_e38b709750814de5a8b73515800efa08
-modified: 1681667879138
+modified: 1682793700288
 created: 1676216621763
 fileName: ediaristas.yaml
 contents: >-
@@ -36,6 +36,7 @@ contents: >-
     - name: Enderecos
     - name: Oportunidades
     - name: Pagamentos
+    - name: Recuperar Senha
 
   paths:
 
@@ -918,6 +919,54 @@ contents: >-
                   $ref: '#/components/schemas/ErrorResponse'
         security:
           - JWT: []      
+    /api/recuperar-senha:
+      post:
+        operationId: solicitarResetSenha
+        tags:
+          - Recuperar Senha
+        description: Solicitar o reset de senha de um usuário
+        requestBody:
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/ResetSenhaRequest'
+        responses:
+          '200':
+            description: Reset de senha solicitado com sucesso
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/MessageResponse'
+          '400':
+            description: Houveram erros de validação
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+    /api/recuperar-senha/confirm:
+      post:
+        operationId: confirmarResetSenha
+        tags:
+          - Recuperar Senha
+        description: Confirma o reset de senha de um usuário
+        requestBody:
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/ConfirmResetSenhaRequest'
+        responses:
+          '200':
+            description: Confirmação de reset de senha realizado com sucesso
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/MessageResponse'
+          '400':
+            description: Houveram erros de validação
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'      
 
   components:
     
@@ -1152,8 +1201,7 @@ contents: >-
           estado:
             type: string
           codigo_ibge:
-            type: string
-      
+            type: string    
       UpdateUsuarioRequest:
         type: object
         required:
@@ -1194,9 +1242,7 @@ contents: >-
             format: password
           password_confirmation:
             type: string
-            format: password
-      
-      
+            format: password        
       OportunidadeResponse:
         type: object
         properties:
@@ -1306,8 +1352,7 @@ contents: >-
             motivo_cancelamento:
               type: string
               minLength: 3
-              maxLength: 255
-            
+              maxLength: 255          
       TokenResponse:
         type: object
         properties:
@@ -1556,7 +1601,36 @@ contents: >-
           foto_usuario:
             type: string
             format: binary
-                
+      ResetSenhaRequest:
+        type: object
+        required:
+          - email
+        properties:
+          email:
+            type: string
+            format: email
+            maxLength: 255
+      ConfirmResetSenhaRequest:
+        type: object
+        required:
+          - email
+          - password
+          - password_confirmation
+          - token
+        properties:
+          email:
+            type: string
+            format: email
+            maxLength: 255
+          password:
+            type: string
+            format: password
+          password_confirmation:
+            type: string
+            format: password
+          token:
+            type: string
+            
     securitySchemes:
       JWT:
         type: http
