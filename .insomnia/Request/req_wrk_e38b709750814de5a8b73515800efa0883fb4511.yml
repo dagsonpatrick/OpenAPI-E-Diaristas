@@ -1,0 +1,39 @@
+_id: req_wrk_e38b709750814de5a8b73515800efa0883fb4511
+type: Request
+parentId: fld_wrk_e38b709750814de5a8b73515800efa085891b7e0
+modified: 1681668507396
+created: 1681668507396
+url: "{{ base_url }}/api/usuarios"
+name: /api/usuarios
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "nome_completo": "string",
+      "email": "user@example.com",
+      "cpf": "string",
+      "nascimento": "string",
+      "telefone": "string",
+      "chave_pix": "string",
+      "password": "string",
+      "new_password": "string",
+      "password_confirmation": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  type: bearer
+  token: "{{bearerToken}}"
+  prefix: ""
+metaSortKey: -1681668507396
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,25 @@
+_id: req_wrk_e38b709750814de5a8b73515800efa08c4a90356
+type: Request
+parentId: fld_wrk_e38b709750814de5a8b73515800efa085891b7e0
+modified: 1681668507390
+created: 1681668507390
+url: "{{ base_url }}/api/usuarios/foto"
+name: /api/usuarios/foto
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{bearerToken}}"
+  prefix: ""
+metaSortKey: -1681668507390
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,24 @@
+_id: req_wrk_e38b709750814de5a8b73515800efa088aa81322
+type: Request
+parentId: fld_wrk_e38b709750814de5a8b73515800efa084f51636d
+modified: 1681668507255
+created: 1681668507255
+url: "{{ base_url }}/api/pagamentos"
+name: /api/pagamentos
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{bearerToken}}"
+  prefix: ""
+metaSortKey: -1681668507256
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
